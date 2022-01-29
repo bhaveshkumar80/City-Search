@@ -1,9 +1,4 @@
-import requests
-import json
 import pandas as pd
-import numpy as np
-from amadeus import Client, ResponseError
-from amadeus import Location
 from fastapi import FastAPI
 
 app = FastAPI()
