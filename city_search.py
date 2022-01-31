@@ -5,7 +5,7 @@ app = FastAPI()
 
 @app.get("/")
 def City_Search(loc_name):
-    df = pd.read_csv('airport_codes.csv')
+    df = pd.read_csv('airport_codes1.csv')
 
     location_data = []
     try:
@@ -13,10 +13,10 @@ def City_Search(loc_name):
             if loc_name.lower() in city.lower():
                 location_data.append({'city': city, 'country': country, 'airport': airport})
             
-            if loc_name.lower() in country.lower():
+            elif loc_name.lower() in country.lower():
                 location_data.append({'city': city, 'country': country, 'airport': airport})
 
-            if loc_name.lower() in airport.lower():
+            elif loc_name.lower() in airport.lower():
                 location_data.append({'city': city, 'country': country, 'airport': airport})
         
             if len(location_data) >= 20:
